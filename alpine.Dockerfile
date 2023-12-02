@@ -29,7 +29,7 @@ COPY server/src /code/src
 
 RUN cargo build --release --offline
 
-FROM alpine
+FROM alpine:3.18.5
 
 LABEL org.label-schema.schema-version="1.0"
 LABEL org.label-schema.docker.cmd="docker run -d -p 3000:3000 -e RUST_LOG=info -e DATABASE_HOST=localhost -e DATABASE_USER=postgres -e DATABASE_DBNAME=postgres jdrouet/jolimail"
